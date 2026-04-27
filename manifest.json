@@ -21,7 +21,8 @@
       "48": "icons/icon-48.png",
       "96": "icons/icon-96.png"
     },
-    "default_title": "Scan with EdgeIQ"
+    "default_title": "Scan with EdgeIQ",
+    "default_popup": "popup.html"
   },
   "browser_specific_settings": {
     "gecko": {
