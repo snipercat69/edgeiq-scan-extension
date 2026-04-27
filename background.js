@@ -1,31 +1,18 @@
-// EdgeIQ — Right-click "Scan with EdgeIQ" context menu
+// background.js — EdgeIQ Scan Extension
+// Context menu: right-click any page or link → "Scan with EdgeIQ"
+
 browser.contextMenus.create({
-  id: "edgeiq-scan",
-  title: "Scan with EdgeIQ",
-  contexts: ["link", "page"]
+  id: 'edgeiq-scan',
+  title: 'Scan with EdgeIQ',
+  contexts: ['link', 'page']
 });
 
 browser.contextMenus.onClicked.addListener(function(info, tab) {
   var url = info.linkUrl || info.pageUrl;
   if (!url) return;
 
-  // Clean the URL: remove trailing slash, strip query params for display
-  var cleanUrl = url.replace(/\/$/, "");
-
-  // Open the scanner with the URL pre-filled
-  var scanUrl = "https://edgeiqlabs.com/?url=" + encodeURIComponent(cleanUrl);
-  browser.tabs.create({ url: scanUrl, active: true });
-});
-
-// Also handle toolbar button click
-browser.browserAction.onClicked.addListener(function(tab) {
-  var url = tab.url;
-  if (!url || url.startsWith("about:") || url.startsWith("chrome:")) {
-    // Can't access this URL directly, open the scanner homepage
-    browser.tabs.create({ url: "https://edgeiqlabs.com/", active: true });
-    return;
-  }
-  var cleanUrl = url.replace(/\/$/, "");
-  var scanUrl = "https://edgeiqlabs.com/?url=" + encodeURIComponent(cleanUrl);
+  // Clean URL: remove trailing slash
+  var cleanUrl = url.replace(/\/$/, '');
+  var scanUrl = 'https://edgeiqlabs.com/?url=' + encodeURIComponent(cleanUrl);
   browser.tabs.create({ url: scanUrl, active: true });
 });
