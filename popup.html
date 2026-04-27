@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 280px;
+      background: #0d1117;
+      color: #e6edf3;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      padding: 16px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .logo {
+      width: 32px;
+      height: 32px;
+      background: #00ff88;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 900;
+      color: #0d1117;
+    }
+    .title { font-size: 0.95rem; font-weight: 700; color: #00ff88; }
+    .subtitle { font-size: 0.75rem; color: #8b949e; }
+    .scan-btn {
+      width: 100%;
+      padding: 10px;
+      background: #00ff88;
+      color: #0d1117;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-bottom: 10px;
+    }
+    .scan-btn:hover { background: #00cc6a; }
+    .note { font-size: 0.72rem; color: #484f58; text-align: center; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">E</div>
+    <div>
+      <div class="title">EdgeIQ Scanner</div>
+      <div class="subtitle">Scan this site</div>
+    </div>
+  </div>
+  <button class="scan-btn" id="scanBtn">Scan Current Tab</button>
+  <div class="note">Opens edgeiqlabs.com with the current page URL pre-filled.</div>
+  <script src="popup.js"></script>
+</body>
+</html>
