@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "EdgeIQ — Scan this site",
+  "version": "1.0.0",
+  "description": "Right-click any website to open it in the EdgeIQ security scanner. Scan SSL, headers, XSS, subdomains, DNS, WHOIS, and CVEs in seconds.",
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": [
+    "contextMenus",
+    "activeTab"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": {
+      "48": "icons/icon-48.png",
+      "96": "icons/icon-96.png"
+    },
+    "default_title": "Scan with EdgeIQ"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "edgeiq-scan@snipercat69.github.com",
+      "strict_min_version": "57.0"
+    }
+  }
+}
